@@ -1,0 +1,1 @@
+package com.example.taskman.user; public enum Role { USER, ADMIN }

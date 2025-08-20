@@ -1,0 +1,31 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/taskdb
+    username: taskuser
+    password: taskpass
+  jpa:
+    hibernate.ddl-auto: update
+    properties.hibernate.jdbc.time_zone: UTC
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 30MB
+
+server:
+  port: 8080
+
+app:
+  jwt:
+    secret: ${JWT_SECRET:please-change-me-to-32+chars-secret}
+    expires-in: 86400
+  storage:
+    local-dir: uploads
+
+---
+spring:
+  config:
+    activate.on-profile: docker
+  datasource:
+    url: jdbc:postgresql://db:5432/taskdb
+    username: taskuser
+    password: taskpass

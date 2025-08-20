@@ -1,0 +1,1 @@
+package com.example.taskman.task; public enum TaskStatus { TODO, IN_PROGRESS, DONE }
